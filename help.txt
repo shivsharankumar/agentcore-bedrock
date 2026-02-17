@@ -1,0 +1,5 @@
+first install uv using the below link through ssh:- curl -LsSf https://astral.sh/uv/install.sh | sh
+then run uv sync
+then run uv add to add any additional package
+uv init
+uv sync

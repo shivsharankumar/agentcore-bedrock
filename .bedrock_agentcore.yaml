@@ -1,0 +1,122 @@
+default_agent: agantcore_with_memory
+agents:
+  agentcore_lang_runtime:
+    name: agentcore_lang_runtime
+    language: python
+    node_version: '20'
+    entrypoint: /home/motherson/Documents/Agentcore/01_agentcore_runtime.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: docker
+    source_path: /home/motherson/Documents/Agentcore
+    aws:
+      execution_role: arn:aws:iam::008859907571:role/AmazonBedrockAgentCoreSDKRuntime-ap-south-1-c980c3716d
+      execution_role_auto_create: false
+      account: 008859907571
+      region: ap-south-1
+      ecr_repository: 008859907571.dkr.ecr.ap-south-1.amazonaws.com/bedrock-agentcore-agentcore_lang_runtime
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: agentcore_lang_runtime-ZqJ58r6AQW
+      agent_arn: arn:aws:bedrock-agentcore:ap-south-1:008859907571:runtime/agentcore_lang_runtime-ZqJ58r6AQW
+      agent_session_id: 31dc707d-dde9-4e3c-af63-b9cf815c0daf
+    codebuild:
+      project_name: bedrock-agentcore-agentcore_lang_runtime-builder
+      execution_role: arn:aws:iam::008859907571:role/AmazonBedrockAgentCoreSDKCodeBuild-ap-south-1-c980c3716d
+      source_bucket: bedrock-agentcore-codebuild-sources-008859907571-ap-south-1
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
+  agantcore_with_memory:
+    name: agantcore_with_memory
+    language: python
+    node_version: '20'
+    entrypoint: /home/motherson/Documents/Agentcore/02_agentcore_memory.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: docker
+    source_path: /home/motherson/Documents/Agentcore
+    aws:
+      execution_role: arn:aws:iam::008859907571:role/AmazonBedrockAgentCoreSDKRuntime-ap-south-1-d8f6181faa
+      execution_role_auto_create: false
+      account: 008859907571
+      region: ap-south-1
+      ecr_repository: 008859907571.dkr.ecr.ap-south-1.amazonaws.com/bedrock-agentcore-agantcore_with_memory
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: agantcore_with_memory-WLzJq37lLX
+      agent_arn: arn:aws:bedrock-agentcore:ap-south-1:008859907571:runtime/agantcore_with_memory-WLzJq37lLX
+      agent_session_id: dc63484a-f680-44aa-942a-5826f90a5f00
+    codebuild:
+      project_name: bedrock-agentcore-agantcore_with_memory-builder
+      execution_role: arn:aws:iam::008859907571:role/AmazonBedrockAgentCoreSDKCodeBuild-ap-south-1-d8f6181faa
+      source_bucket: bedrock-agentcore-codebuild-sources-008859907571-ap-south-1
+    memory:
+      mode: STM_AND_LTM
+      memory_id: customercareagentmemory-eOBzZWDzYW
+      memory_arn: null
+      memory_name: agantcore_with_memory_memory
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
